@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راهنمای نصب مبدل فایل</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #2563eb;
+    --accent-soft: #dbeafe;
+    --ok: #16a34a;
+    --warn-bg: #fef3c7;
+    --warn-border: #f59e0b;
+    --tip-bg: #e0f2fe;
+    --tip-border: #0ea5e9;
+    --code-bg: #0f172a;
+    --code-text: #e2e8f0;
+    --inline-bg: #eef2ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0b1120;
+      --card: #162032;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #2b3a52;
+      --accent: #60a5fa;
+      --accent-soft: #1e3a5f;
+      --ok: #4ade80;
+      --warn-bg: #3a2e0e;
+      --warn-border: #d97706;
+      --tip-bg: #0c2d3f;
+      --tip-border: #0284c7;
+      --code-bg: #060b16;
+      --code-text: #e2e8f0;
+      --inline-bg: #1e293b;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0b1120;
+    --card: #162032;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #2b3a52;
+    --accent: #60a5fa;
+    --accent-soft: #1e3a5f;
+    --ok: #4ade80;
+    --warn-bg: #3a2e0e;
+    --warn-border: #d97706;
+    --tip-bg: #0c2d3f;
+    --tip-border: #0284c7;
+    --code-bg: #060b16;
+    --code-text: #e2e8f0;
+    --inline-bg: #1e293b;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Vazirmatn, "Segoe UI", Tahoma, "Noto Naskh Arabic", system-ui, sans-serif;
+    line-height: 2;
+    font-size: 16px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  header.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+    border-radius: 18px;
+    padding: 28px 26px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  header.hero h1 { margin: 0 0 6px; font-size: 1.7rem; line-height: 1.6; }
+  header.hero p { margin: 0; opacity: .95; }
+  .theme-btn {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(255,255,255,.2); color: #fff; border: 0;
+    border-radius: 10px; padding: 4px 12px; cursor: pointer; font: inherit; font-size: .85rem;
+  }
+  .theme-btn:hover { background: rgba(255,255,255,.32); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .card h2 { margin: 0 0 8px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; line-height: 1.6; }
+  .num {
+    flex: none; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); color: #fff; display: inline-flex;
+    align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;
+  }
+  .card ol, .card ul { margin: 8px 0; padding-inline-start: 24px; }
+  .card li { margin: 4px 0; }
+  .card p { margin: 8px 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  .tbl { overflow-x: auto; }
+  th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: right; vertical-align: top; }
+  th { background: var(--accent-soft); }
+
+  a { color: var(--accent); text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+
+  code.i {
+    direction: ltr; unicode-bidi: embed;
+    background: var(--inline-bg); padding: 1px 7px; border-radius: 6px;
+    font-family: Consolas, "Courier New", monospace; font-size: .92em;
+  }
+
+  .code {
+    direction: ltr; text-align: left; position: relative;
+    background: var(--code-bg); color: var(--code-text);
+    border-radius: 12px; margin: 10px 0; padding: 14px 16px; padding-right: 76px;
+    font-family: Consolas, "Courier New", monospace; font-size: .92rem; line-height: 1.7;
+    overflow-x: auto; white-space: pre;
+  }
+  .copy {
+    position: absolute; top: 8px; right: 8px;
+    background: #334155; color: #f1f5f9; border: 0; border-radius: 8px;
+    padding: 3px 10px; cursor: pointer; font: inherit; font-size: .8rem;
+  }
+  .copy:hover { background: #475569; }
+  .copy.done { background: var(--ok); color: #fff; }
+
+  .note { border-radius: 12px; padding: 10px 16px; margin: 12px 0; border-inline-start: 5px solid; }
+  .tip { background: var(--tip-bg); border-color: var(--tip-border); }
+  .warn { background: var(--warn-bg); border-color: var(--warn-border); }
+
+  .success { text-align: center; font-size: 1.1rem; }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <button class="theme-btn" id="themeBtn" type="button">تغییر تم</button>
+    <h1>🔄 راهنمای نصب مبدل فایل</h1>
+    <p>تبدیل CSV، TXT، XLSX، XLS و ODS به XLSX، XLS، ODS، CSV، HTML و PDF. فایل‌های تبدیل‌شده یک ساعت نگهداری و سپس خودکار حذف می‌شوند.</p>
+  </header>
+
+  <section class="card">
+    <h2>📋 پیش‌نیازها</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ابزار</th><th>کاربرد</th><th>لینک دانلود</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>XAMPP</b></td>
+            <td>وب‌سرور آپاچی و PHP</td>
+            <td><a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.5.12/xampp-windows-x64-8.5.12-0-VS17-installer.exe">xampp-windows-x64-8.5.12</a></td>
+          </tr>
+          <tr>
+            <td><b>Composer</b></td>
+            <td>نصب کتابخانهٔ PhpSpreadsheet</td>
+            <td><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup.exe</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note tip">💡 برای این مبدل فقط سرویس <b>Apache</b> لازم است؛ بقیهٔ سرویس‌های XAMPP را فعال نکنید.</div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">۱</span> نصب XAMPP</h2>
+    <ol>
+      <li>فایل نصب XAMPP را از لینک بالا دانلود و نصب کنید (مثلاً در مسیر <code class="i">D:\xampp</code>).</li>
+      <li>بعد از نصب، <b>XAMPP Control Panel</b> را باز کنید. هنوز چیزی را Start نکنید؛ ابتدا مراحل بعد را انجام دهید.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">۲</span> نصب Composer</h2>
+    <ol>
+      <li>فایل <code class="i">Composer-Setup.exe</code> را دانلود و اجرا کنید.</li>
+      <li>در مرحله‌ای که مسیر PHP را می‌پرسد، <b>مسیر فایل <code class="i">php.exe</code></b> خودتان را بدهید. مثلاً:
+        <div class="code" data-copy>D:\xampp\php\php.exe</div>
+      </li>
+      <li>نصب را تمام کنید. اگر پنجرهٔ cmd باز بود، ببندید و دوباره باز کنید.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">۳</span> ساخت پوشهٔ برنامه</h2>
+    <ol>
+      <li>داخل پوشهٔ <code class="i">htdocs</code> یک پوشهٔ دلخواه بسازید، مثلاً <code class="i">excel</code>:
+        <div class="code" data-copy>D:\xampp\htdocs\excel</div>
+      </li>
+      <li>فایل زیپ برنامه را داخل همین پوشه <b>Extract</b> کنید.</li>
+    </ol>
+    <div class="note warn">⚠️ فایل <code class="i">index.php</code> باید <b>مستقیماً</b> داخل پوشهٔ <code class="i">excel</code> دیده شود، نه داخل یک پوشهٔ دیگرِ تودرتو:<br>
+      <code class="i">D:\xampp\htdocs\excel\index.php</code> ✅</div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">۴</span> نصب کتابخانه‌ها</h2>
+    <ol>
+      <li>پوشهٔ <code class="i">D:\xampp\htdocs\excel</code> را در File Explorer باز کنید.</li>
+      <li>روی <b>نوار آدرس</b> کلیک کنید، عبارت <code class="i">cmd</code> را تایپ کنید و <b>Enter</b> بزنید تا پنجرهٔ cmd در همین پوشه باز شود.</li>
+      <li>دستور زیر را کپی و اجرا کنید:
+        <div class="code" data-copy>composer require phpoffice/phpspreadsheet</div>
+      </li>
+      <li>منتظر بمانید دانلود تمام شود. پوشهٔ <code class="i">vendor</code> و فایل‌های <code class="i">composer.json</code> و <code class="i">composer.lock</code> داخل پوشه ساخته می‌شوند.</li>
+    </ol>
+
+    <p><b>📄 فقط اگر خروجی PDF می‌خواهید</b>، دستور زیر را هم اجرا کنید:</p>
+    <div class="code" data-copy>composer require mpdf/mpdf</div>
+
+    <div class="note tip">💡 اگر Composer دربارهٔ نبودن یک افزونه (مثل <code class="i">gd</code> یا <code class="i">zip</code>) خطا داد، فایل <code class="i">D:\xampp\php\php.ini</code> را باز کنید، <code class="i">;</code> اول خط <code class="i">extension=gd</code> یا <code class="i">extension=zip</code> را بردارید، ذخیره کنید و دستور را دوباره اجرا کنید.</div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">۵</span> اجرا</h2>
+    <ol>
+      <li>در XAMPP Control Panel کنار <b>Apache</b> روی <b>Start</b> بزنید.</li>
+      <li>این آدرس را در مرورگر باز کنید:
+        <div class="code" data-copy>http://localhost/excel/</div>
+      </li>
+    </ol>
+    <p class="success">صفحهٔ اصلی مبدل نمایش داده می‌شود. 🎉</p>
+  </section>
+
+  <section class="card">
+    <h2>🛠️ عیب‌یابی سریع</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>مشکل</th><th>راه‌حل</th></tr></thead>
+        <tbody>
+          <tr><td>Apache روشن نمی‌شود</td><td>احتمالاً پورت 80 را برنامهٔ دیگری (مثل IIS یا Skype) گرفته است. آن برنامه را ببندید یا پورت Apache را عوض کنید.</td></tr>
+          <tr><td>خطای <code class="i">vendor/autoload.php</code></td><td>دستور <code class="i">composer require</code> در پوشهٔ درست (کنار <code class="i">index.php</code>) اجرا نشده است.</td></tr>
+          <tr><td><code class="i">composer</code> شناخته نمی‌شود</td><td>cmd را ببندید و دوباره باز کنید؛ اگر نشد، Composer را دوباره نصب کنید.</td></tr>
+          <tr><td>گزینهٔ PDF غیرفعال است</td><td>دستور <code class="i">composer require mpdf/mpdf</code> اجرا نشده است.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>راهنمای نصب مبدل فایل</footer>
+</div>
+
+<script>
+(function () {
+  // دکمهٔ کپی برای بلوک‌های کد
+  document.querySelectorAll('.code[data-copy]').forEach(function (box) {
+    var text = box.textContent.trim();
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy';
+    btn.textContent = 'کپی';
+    btn.addEventListener('click', function () {
+      function ok() {
+        btn.textContent = 'کپی شد ✓';
+        btn.classList.add('done');
+        setTimeout(function () { btn.textContent = 'کپی'; btn.classList.remove('done'); }, 1500);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(ok);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+    box.textContent = text;
+    box.appendChild(btn);
+  });
+
+  // تغییر دستی تم روشن/تاریک
+  var root = document.documentElement;
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var dark = getComputedStyle(root).colorScheme === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>
