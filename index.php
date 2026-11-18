@@ -324,8 +324,13 @@ $files = listFiles();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>تبدیل فایل</title>
+	<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.rtl.min.css" integrity="sha384-fFMX5LqaHoT6olm8r/JTe3Dg4+vFEFXrVlhIo8IGs96iA+JhgKLLYwY4y2fHeyMY" crossorigin="anonymous">
 	<style>
+	body {
+    font-family: Vazirmatn, sans-serif;
+}
 		/* مودال با تگ استاندارد dialog (بدون نیاز به bootstrap.js) */
 		dialog.rm { border: 0; border-radius: 12px; padding: 0; width: 92%; max-width: 480px; box-shadow: 0 10px 40px rgba(0,0,0,.3); }
 		dialog.rm::backdrop { background: rgba(0,0,0,.5); }
