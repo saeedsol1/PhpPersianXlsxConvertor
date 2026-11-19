@@ -125,7 +125,6 @@ http://localhost/excel/
 <div dir="ltr" align="left">
 
 ```bash
-
 excel/
 ├── index.php
 ├── composer.json
@@ -133,14 +132,15 @@ excel/
 ├── vendor/
 ├── LICENSE
 └── README.md
-
 ```
 </div>
+---
 پوشهٔ vendor و فایل composer.lock توسط Composer ساخته می‌شوند و نباید دستی ویرایش شوند.
-
+---
 <div dir="ltr" align="left">
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; version 2 of the License.
 </div>
+
 ---
 
 🤝 مشارکت
