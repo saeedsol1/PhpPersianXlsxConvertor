@@ -30,14 +30,14 @@
 1. فایل `Composer-Setup.exe` را دانلود و اجرا کنید.
 2. در مرحله‌ای که مسیر PHP را می‌پرسد، **مسیر فایل `php.exe`** خودتان را بدهید. مثلاً:
 
-```text
+
 D:\xampp\php\php.exe
 نصب را تمام کنید. بعد از نصب، پنجرهٔ cmd را اگر باز بود ببندید و دوباره باز کنید.
 
 3️⃣ ساخت پوشهٔ برنامه
 داخل پوشهٔ htdocs یک پوشهٔ دلخواه بسازید، مثلاً excel:
 
-text
+
 D:\xampp\htdocs\excel
 فایل‌های برنامه را از GitHub بگیرید: در صفحهٔ مخزن روی دکمهٔ سبز Code و سپس Download ZIP بزنید.
 
@@ -72,7 +72,7 @@ mpdf/mpdf — تولید خروجی PDF
 
 این آدرس را در مرورگر باز کنید:
 
-text
+
 http://localhost/excel/
 صفحهٔ اصلی مبدل نمایش داده می‌شود. 🎉
 
@@ -84,7 +84,7 @@ composer شناخته نمی‌شود	cmd را ببندید و دوباره با
 گزینهٔ PDF غیرفعال است	مطمئن شوید mpdf/mpdf در vendor نصب شده است (composer install را دوباره اجرا کنید).
 خطای Class "Mpdf\Mpdf" not found	اجرای composer install ناقص مانده است یا vendor/autoload.php در فایل PHP بارگذاری نشده است.
 📁 ساختار پروژه
-text
+
 excel/
 ├── index.php
 ├── composer.json
@@ -97,7 +97,7 @@ excel/
 📄 لایسنس
 این پروژه تحت مجوز GNU General Public License v2.0 only منتشر شده است. فایل LICENSE را ببینید.
 
-text
+
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; version 2 of the License.
