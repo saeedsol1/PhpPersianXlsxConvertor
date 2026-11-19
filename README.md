@@ -84,7 +84,7 @@ composer شناخته نمی‌شود	cmd را ببندید و دوباره با
 گزینهٔ PDF غیرفعال است	مطمئن شوید mpdf/mpdf در vendor نصب شده است (composer install را دوباره اجرا کنید).
 خطای Class "Mpdf\Mpdf" not found	اجرای composer install ناقص مانده است یا vendor/autoload.php در فایل PHP بارگذاری نشده است.
 📁 ساختار پروژه
-
+text
 excel/
 ├── index.php
 ├── composer.json
@@ -97,7 +97,7 @@ excel/
 📄 لایسنس
 این پروژه تحت مجوز GNU General Public License v2.0 only منتشر شده است. فایل LICENSE را ببینید.
 
-
+text
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; version 2 of the License.
