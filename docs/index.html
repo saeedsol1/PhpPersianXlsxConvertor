@@ -143,6 +143,10 @@
 
   .success { text-align: center; font-size: 1.1rem; }
   footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 24px; }
+  
+  .tree summary { cursor: pointer; user-select: none;text-align:left }
+.tree ul { list-style: none; padding-left: 22px; text-align:left; }
+.tree li { line-height: 1.8; font-family: monospace; }
 </style>
 </head>
 <body>
@@ -250,7 +254,55 @@
       </table>
     </div>
   </section>
+<p>
+📁 ساختار پروژه
+<details open class="tree">
+  <summary>excel/</summary>
+  <ul>
+    
+	<li>
+      <details>
+        <summary>converted/</summary>
+        <ul>
+          <li>فایلهای آپبود شده در این پوشه قرار می کیرد و این پوشه بعد از اجرای ایجاد می شود</li>
+        </ul>
+      </details>
+    </li>
+	
+	
+	<li>
+      <details>
+        <summary>docs/</summary>
+        <ul>
+          <li>index.html</li>
+        </ul>
+      </details>
+    </li>
+	
+	  <li>
+      <details>
+        <summary>vendor/</summary>
+        <ul>
+          <li>autoload.php</li>
+        </ul>
+      </details>
+    </li>
+	
 
+    <li>composer.json</li>
+    <li>composer.lock</li>
+  	<li>index.php</li>
+
+	
+    <li>LICENSE</li>
+    <li>README.md</li>
+  </ul>
+</details>
+<p>
+
+پوشهٔ vendor  و فایل composer.lock توسط Composer ساخته می‌شوند و نباید دستی ویرایش شوند.<br>
+پوشه converted بعد از اجرای در مرورگر ایجاد می شود.
+</p>
   <footer>راهنمای نصب مبدل فایل</footer>
 </div>
 
