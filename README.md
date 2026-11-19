@@ -119,8 +119,8 @@ http://localhost/excel/
 | `composer` شناخته نمی‌شود | cmd را ببندید و دوباره باز کنید؛ اگر نشد، Composer را دوباره نصب کنید. |
 | گزینهٔ PDF غیرفعال است | دستور `composer require mpdf/mpdf` اجرا نشده است. |
 
+---
 📁 ساختار پروژه
-
 
 <div dir="ltr" align="left">
 
@@ -139,10 +139,9 @@ excel/
 پوشهٔ vendor و فایل composer.lock توسط Composer ساخته می‌شوند و نباید دستی ویرایش شوند.
 
 <div dir="ltr" align="left">
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; version 2 of the License.
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; version 2 of the License.
 </div>
+---
 
 🤝 مشارکت
 اگر باگ یا پیشنهادی دارید، خوشحال می‌شوم از طریق بخش Issues یا Pull Request در GitHub اطلاع دهید.
